@@ -1,0 +1,50 @@
+/* Minimal, clean design */
+:root{
+  --bg:#0b1020;
+  --panel:#121a33;
+  --muted:#8ea1c0;
+  --text:#e9f0ff;
+  --accent:#7aa2ff;
+  --chip:#192449;
+  --chip-border:#24335f;
+}
+*{box-sizing:border-box}
+html,body{height:100%}
+body{margin:0;font-family:system-ui,-apple-system,Segoe UI,Roboto,Ubuntu,'Helvetica Neue',Arial;
+  color:var(--text);background:radial-gradient(1200px 600px at 20% -10%,#162552,transparent),
+                       radial-gradient(1200px 600px at 80% -10%,#1a1a2b,transparent),
+                       var(--bg);
+}
+.app-header{padding:24px 20px 8px;max-width:1100px;margin:auto;text-align:center}
+.app-header h1{margin:0 0 6px;font-weight:800;letter-spacing:.3px}
+.app-header .sub{margin:0;color:var(--muted)}
+
+.controls{display:flex;gap:20px;flex-wrap:wrap;max-width:1100px;margin:18px auto;padding:0 20px}
+.control{display:flex;flex-direction:column;gap:6px;min-width:240px;flex:1}
+label{font-size:.9rem;color:var(--muted)}
+input[type="search"], select{
+  background:var(--panel);border:1px solid var(--chip-border);color:var(--text);
+  padding:12px 14px;border-radius:12px;outline:none;
+}
+input::placeholder{color:#93a3c9}
+
+.grid{max-width:1100px;margin:6px auto 50px;padding:0 20px;display:grid;grid-template-columns:repeat(auto-fill,minmax(280px,1fr));gap:14px}
+.card{
+  background:linear-gradient(180deg,#172144 0%,#121a33 100%);
+  border:1px solid var(--chip-border);border-radius:16px;padding:14px 14px 10px;display:flex;flex-direction:column;gap:10px;
+  transition:transform .12s ease, box-shadow .12s ease;box-shadow:0 1px 0 rgba(255,255,255,.02),0 6px 20px rgba(0,0,0,.2)
+}
+.card:hover{transform:translateY(-2px) scale(1.01);box-shadow:0 20px 40px rgba(15,22,42,.35)}
+.molecule{font-weight:700;line-height:1.35}
+.meta{display:flex;gap:8px;align-items:center;flex-wrap:wrap}
+.badge{background:var(--chip);border:1px solid var(--chip-border);color:#cfd9ff;padding:4px 8px;border-radius:999px;font-size:.75rem}
+.toggle{
+  background:transparent;border:1px dashed var(--chip-border);color:var(--accent);border-radius:10px;padding:8px 10px;
+  cursor:pointer;font-weight:600;text-align:left
+}
+.brandlist{display:none;margin:0;padding:0;list-style:none}
+.brandlist.show{display:block}
+.brand{display:flex;justify-content:space-between;gap:12px;padding:8px 10px;border-radius:10px;background:#0e1733;border:1px solid #1d2b54;margin-bottom:8px}
+.brand .name{font-weight:600}
+.brand .price{color:#a6b6db;font-size:.9rem}
+.footer{max-width:1100px;margin:0 auto 60px;padding:0 20px;color:var(--muted);text-align:center}
