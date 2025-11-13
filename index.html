@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Molecule → Brand Finder</title>
+  <link rel="stylesheet" href="styles.css" />
+</head>
+<body>
+  <header class="app-header">
+    <h1>🧪 Molecule → Brand Finder</h1>
+    <p class="sub">Click a molecule to see its brand names. Filter by specialty or search.</p>
+  </header>
+
+  <section class="controls">
+    <div class="control">
+      <label for="search">Search molecule or brand</label>
+      <input id="search" type="search" placeholder="e.g., Telmisartan, Glimepiride, Rosuvastatin" />
+    </div>
+    <div class="control">
+      <label for="category">Specialty</label>
+      <select id="category">
+        <option value="all">All</option>
+      </select>
+    </div>
+    <div class="control">
+      <label for="sort">Sort</label>
+      <select id="sort">
+        <option value="molecule-az" selected>Molecule (A → Z)</option>
+        <option value="molecule-za">Molecule (Z → A)</option>
+        <option value="brands-desc"># Brands (high → low)</option>
+        <option value="brands-asc"># Brands (low → high)</option>
+      </select>
+    </div>
+  </section>
+
+  <main id="grid" class="grid"></main>
+
+  <footer class="footer">
+    <p>
+      Data source: user-supplied PDF “New Molecule & brand name”. Categories are best-effort clinical groupings for navigation.
+    </p>
+  </footer>
+
+  <script src="data.js"></script>
+  <script src="app.js"></script>
+</body>
+</html>
